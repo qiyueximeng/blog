@@ -22,6 +22,12 @@
   font-size: 1.4rem;
   text-align: center;
   font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.word {
+  text-align: center;
+  color: #aaa;
 }
 
 .line {
@@ -37,6 +43,8 @@
 }
 
 .list {
+  display: flex;
+  justify-content: center;
   text-align: center;
 }
 .list > li {

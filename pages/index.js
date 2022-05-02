@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Layout, { siteTitle } from "../components/layout";
@@ -16,6 +17,11 @@ export async function getStaticProps() {
   };
 }
 
+const words = [
+  "人生本身没有意义，有意义的是这一生经历了什么",
+  "人有无限的可能，所以重复的事情要交给机器",
+];
+
 export default function Home({ allPostsData }) {
   return (
     <div className={styles.app}>
@@ -25,10 +31,22 @@ export default function Home({ allPostsData }) {
 
       <section className={styles.container}>
         <div className={styles.name}>{siteTitle}</div>
+        <div className={styles.word}>
+          （{words[Math.floor(Math.random() * words.length)]}）
+        </div>
         <div className={styles.line}></div>
         <ul className={styles.list}>
           <li>
-            <Link href="/posts">技术博客</Link>
+            <Link href="/blogs">Blog</Link>
+          </li>
+          <li>
+            <Link href="/list">List</Link>
+          </li>
+          <li>
+            <Link href="/thinks">Thinks</Link>
+          </li>
+          <li>
+            <Link href="/about">About</Link>
           </li>
         </ul>
       </section>

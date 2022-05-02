@@ -1,28 +1,23 @@
-import { useMemo } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import Layout, { siteTitle } from "../components/layout";
-import utilStyles from "../styles/utils.module.css";
+import { siteTitle } from "../components/layout";
 import styles from "../styles/index.module.css";
-import { getSortedPostsData } from "../lib/posts";
-import Date from "../components/date";
-import Image from "next/image";
 
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
+export async function getServerSideProps(context) {
+  const words = [
+    "人生本身没有意义，有意义的是这一生经历了什么",
+    "人有无限的可能，所以重复的事情要交给机器",
+  ];
+  const word = words[Math.floor(Math.random() * words.length)];
+
   return {
     props: {
-      allPostsData,
+      word,
     },
   };
 }
 
-const words = [
-  "人生本身没有意义，有意义的是这一生经历了什么",
-  "人有无限的可能，所以重复的事情要交给机器",
-];
-
-export default function Home({ allPostsData }) {
+export default function Home({ word }) {
   return (
     <div className={styles.app}>
       <Head>
@@ -31,9 +26,7 @@ export default function Home({ allPostsData }) {
 
       <section className={styles.container}>
         <div className={styles.name}>{siteTitle}</div>
-        <div className={styles.word}>
-          （{words[Math.floor(Math.random() * words.length)]}）
-        </div>
+        <div className={styles.word}>（{word}）</div>
         <div className={styles.line}></div>
         <ul className={styles.list}>
           <li>

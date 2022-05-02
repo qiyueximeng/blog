@@ -1,0 +1,28 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.name {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contacts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 1rem;
+}
+.contact {
+  padding: 0 0.5rem;
+}
+
+.description > p {
+  color: #666;
+  line-height: 1.2rem;
+  margin-bottom: 0.5rem;
+}

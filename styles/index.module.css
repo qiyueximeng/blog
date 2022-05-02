@@ -1,0 +1,56 @@
+.app {
+  background: url("/images/bg_m.jpg") no-repeat center/cover;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 60vw;
+  min-width: 400px;
+  max-width: 800px;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fefefe;
+  border-radius: 1rem;
+  padding: 20px 30px;
+}
+
+.name {
+  font-size: 1.4rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.line {
+  border-top: 1px solid #fefefe;
+  border-image: linear-gradient(
+      30deg,
+      rgba(255, 255, 255, 0) 0%,
+      #fefefe 50%,
+      rgba(255, 255, 255, 0) 99%
+    )
+    2 2 2 2;
+  margin: 9px 0 10px;
+}
+
+.list {
+  text-align: center;
+}
+.list > li {
+  padding: 10px;
+}
+.list > li > a:hover {
+  color: aqua;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  text-align: center;
+  padding: 20px;
+  color: #fefefe;
+}

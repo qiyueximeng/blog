@@ -3,7 +3,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p 80"
+    "start": "next start -p 80",
+    "deploy": "pm2 start yarn --name 'blog' --interpreter node -- start",
+    "upgrade": "git pull && yarn && yarn build && pm2 restart blog"
   },
   "dependencies": {
     "date-fns": "^2.28.0",

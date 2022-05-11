@@ -44,7 +44,11 @@ export default function Home({ word }) {
         </ul>
       </section>
 
-      <footer className={styles.footer}>备案信息展示</footer>
+      <footer className={styles.footer}>
+        <a target="_blank" href="https://beian.miit.gov.cn/" rel="noreferrer">
+          粤ICP备2022057119号-1
+        </a>
+      </footer>
 
       {/* <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>

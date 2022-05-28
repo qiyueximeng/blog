@@ -20,6 +20,11 @@ export async function getServerSideProps(context) {
 export default function Home({ word }) {
   return (
     <div className={styles.app}>
+      <div id="starsBox">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+      </div>
       <Head>
         <title>{siteTitle}</title>
       </Head>

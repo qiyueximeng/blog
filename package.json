@@ -19,7 +19,10 @@
     "sharp": "^0.30.4"
   },
   "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@types/react": "^18.0.14",
     "eslint": "8.14.0",
-    "eslint-config-next": "12.1.5"
+    "eslint-config-next": "12.1.5",
+    "typescript": "^4.7.4"
   }
 }

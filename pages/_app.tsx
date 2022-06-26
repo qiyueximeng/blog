@@ -5,8 +5,8 @@ function MyApp({ Component, pageProps }) {
   return (
     <IconContext.Provider
       value={{
-        color: "rgba(0,0,0,.3)",
-        size: "1.4rem",
+        color: "rgba(0,0,0,.7)",
+        size: "1.7rem",
       }}
     >
       <Component {...pageProps} />

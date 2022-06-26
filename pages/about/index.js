@@ -1,5 +1,5 @@
 import styles from "./index.module.css";
-import { FaHome, FaGithub, FaWeixin } from "react-icons/fa";
+import { FaHome, FaGithub } from "react-icons/fa";
 import Link from "next/link";
 import TopTip from "../../components/toptip/toptip";
 

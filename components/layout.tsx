@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 
@@ -9,41 +8,45 @@ export const siteTitle = "幽涯的网络日志";
 
 export default function Layout({ children }) {
   return (
-    <div className={styles.container}>
+    <div className="flex flex-col min-h-screen">
       <Head>
-        <link rel="icon" href="/images/keqing.jpeg" />
+        <link rel="icon" href="/images/abeiduo.jpeg" />
         <meta name="description" content="youya's personal website" />
         <title>{siteTitle}</title>
       </Head>
-      <header className={styles.header}>
-        <div className={styles.logo}>
+      <header className="flex justify-between items-center px-6 h-16 z-[999] bg-white shadow-sm">
+        <div className="flex items-center cursor-default">
           <Link href="/" passHref>
             <>
               <Image
                 priority
-                src="/images/keqing.jpeg"
+                src="/images/abeiduo.jpeg"
                 className={utilStyles.borderCircle}
                 height={30}
                 width={30}
                 alt={name}
               />
-              <span className={styles.name}>{siteTitle}</span>
+              <span className="ml-3">{siteTitle}</span>
             </>
           </Link>
         </div>
-        <div className={styles.menu}>
+        <div className="flex">
           <Link href="/blogs" passHref>
-            <div className={styles.menuItem}>Blogs</div>
+            <div className="h-16 p-2 flex items-center hover:cursor-pointer hover:text-sky-700">
+              Blogs
+            </div>
           </Link>
           <Link href="/list" passHref>
-            <div className={styles.menuItem}>List</div>
+            <div className="h-16 p-2 flex items-center hover:cursor-pointer hover:text-sky-700">
+              List
+            </div>
           </Link>
         </div>
       </header>
 
-      <main className={styles.center}>{children}</main>
+      <main className="flex-1">{children}</main>
 
-      <footer className={styles.footer}>
+      <footer className="flex justify-center items-center h-16">
         <a target="_blank" href="https://beian.miit.gov.cn/" rel="noreferrer">
           粤ICP备2022057119号-1
         </a>

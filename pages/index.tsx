@@ -19,37 +19,39 @@ export async function getServerSideProps(context) {
   };
 }
 
+const descriptions = [
+  "我是幽涯，是个软件工程师，目前就职于字节跳动。除了编程以外，在空闲的时间喜欢看看书和玩玩游戏。",
+  "嗯，先介绍那么多。剩下的想到再补上吧...",
+];
+
 export default function Home({ word }) {
   return (
     <Layout>
-      <main className={styles.container}>
+      <main className="bg-white py-4">
         {/* <div id="starsBox">
           <div id="stars"></div>
           <div id="stars2"></div>
           <div id="stars3"></div>
         </div> */}
-        <section className={styles.personal}>
-          <div className={styles.introduction}>
+        <section className="flex items-center py-12 m-auto w-4/5">
+          <div className="px-8 w-2/6 flex flex-col items-center">
             <Image
               priority
-              src="/images/keqing.jpeg"
+              src="/images/abeiduo.jpeg"
               className={utilStyles.borderCircle}
               height={200}
               width={200}
               alt={name}
             />
-            <h1 className={styles.name}>{name}</h1>
-            <div className={styles.word}>{word}</div>
-            <div className={styles.contacts}>
-              <TopTip className={styles.contact} tip="qiyueximeng@gmail.com">
+            <h1 className="mt-4 mb-6">{name}</h1>
+            <div className="mb-4 text-center text-gray-400">{word}</div>
+            <div className="flex justify-center items-center">
+              <TopTip tip="qiyueximeng@gmail.com">
                 <a href="mailto:qiyueximeng@gmail.com">
                   <FaEnvelope />
                 </a>
               </TopTip>
-              <TopTip
-                className={styles.contact}
-                tip="https://github.com/qiyueximeng"
-              >
+              <TopTip className="ml-2" tip="https://github.com/qiyueximeng">
                 <a
                   href="https://github.com/qiyueximeng"
                   target="_blank"
@@ -60,13 +62,10 @@ export default function Home({ word }) {
               </TopTip>
             </div>
           </div>
-          <div className={styles.descriptions}>
-            <p className={styles.description}>
-              我是幽涯，是个软件工程师，目前就职于字节跳动。除了编程以外，在空闲的时间喜欢看看书和玩玩游戏。
-            </p>
-            <p className={styles.description}>
-              嗯，先介绍那么多。剩下的想到再补上吧...
-            </p>
+          <div className="px-8 w-4/6">
+            {descriptions.map((desc) => (
+              <p className="mb-2 text-xl opacity-80">{desc}</p>
+            ))}
           </div>
         </section>
       </main>
